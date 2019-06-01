@@ -1,0 +1,59 @@
+# pregnancy_cfRNA
+Repository to reproduce analyses from manuscript titled "Noninvasive blood test for fetal development predict gestational age and preterm delivery"
+
+# To run the code
+
+## Install the dependencies
+### R packages
+* plyr
+* dplyr
+* ggplot2
+* reshape2
+* cowplot
+* corrplot
+* caret
+* randomForest
+* edgeR
+* limma
+* locfit
+* splines
+* KernSmooth
+* statmod
+* MASS
+* exactRankTests
+* pROC
+* effsize
+
+### Python packages
+* seaborn
+* numpy
+* pandas
+* matplotlib
+
+## Set up directory structure
+The code expects the following directory structure:
+* Main directory contains the following files and subdirectories:
+  * Files:
+    * load_data.R (Located in **common_scripts** folder)
+    * plot_theme.R (Located in **common_scripts** folder)
+    * counts_gene_lists.RData (Located in **common_scripts** folder)
+  * Sub-directories titled as followed:
+    * raw_data - contains 9 csv files
+    * data_consolidation - contains 4 R scripts
+    * fig_1 - contains 1 R script
+    * fig_2 - contains 4 sub-sub-directories
+    * fig_3 - contains 2 sub-sub-directories
+    * supplement - contains 5 R scripts
+
+### Download raw data and relevant code
+* Data can be found in the folder raw_data.
+* All relevant code for each figure can be found in the folder with the corresponding name
+
+### To run code
+Please note that you must change the variable **mainDir** in any script to reflect the main directory (See section titled "*Set up directory structure*")
+#### From scratch:
+* Download the raw data files and process them using the script **merge_clean_data.R** prior to running any other script.
+* Build ML models using the script **build_models.R** in the folder **fig_2/c_d**
+#### Using processed data:
+* Download counts_gene_lists.RData located in the folder **common_scripts** prior to running any other script.
+* Download saved model objects from the folders **fig_2/c_d/models** and **fig_2/e/models**
